@@ -15,7 +15,12 @@ public class DAWSwing {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        // creamos el jfarame y lo mostramos
+        //instanciamos un objeto principal
+        Principal principal = new Principal();
+        principal.setLocationRelativeTo(null);
+        //lo havemos visible
+        principal.setVisible(true);
     }
     
 }
