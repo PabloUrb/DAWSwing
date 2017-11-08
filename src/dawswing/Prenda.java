@@ -12,6 +12,8 @@ import java.util.Objects;
  * @author DAM
  */
 public class Prenda {
+
+    static String getCodigo;
     private String codigo;
     private String descripcion;
     private String color;
