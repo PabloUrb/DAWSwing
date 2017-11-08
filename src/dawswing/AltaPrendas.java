@@ -5,6 +5,8 @@
  */
 package dawswing;
 
+import static dawswing.DAWSwing.ropa;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
 /**
@@ -38,13 +40,15 @@ public class AltaPrendas extends javax.swing.JDialog {
         jLabel4 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jComboBox2 = new javax.swing.JComboBox<>();
-        jTextField2 = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         jSpinner1 = new javax.swing.JSpinner();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jSpinner2 = new javax.swing.JSpinner();
         jButton2 = new javax.swing.JButton();
+        jLabel8 = new javax.swing.JLabel();
+        jSpinner3 = new javax.swing.JSpinner();
+        jTextField2 = new javax.swing.JTextField();
 
         jLabel1.setText("jLabel1");
 
@@ -60,7 +64,6 @@ public class AltaPrendas extends javax.swing.JDialog {
 
         jLabel3.setText("Codigo:  ");
 
-        jTextField1.setText("Codigo");
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField1ActionPerformed(evt);
@@ -85,16 +88,9 @@ public class AltaPrendas extends javax.swing.JDialog {
             }
         });
 
-        jTextField2.setText("Descripción");
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
-            }
-        });
-
         jLabel5.setText("Descripción: ");
 
-        jSpinner1.setModel(new javax.swing.SpinnerNumberModel(1, 1, null, 1));
+        jSpinner1.setModel(new javax.swing.SpinnerNumberModel(1.0d, 1.0d, null, 1.0d));
         jSpinner1.setPreferredSize(new java.awt.Dimension(44, 20));
         jSpinner1.setVerifyInputWhenFocusTarget(false);
 
@@ -104,12 +100,18 @@ public class AltaPrendas extends javax.swing.JDialog {
 
         jSpinner2.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
 
-        jButton2.setText("Validar datos");
+        jButton2.setText("Dar de alta");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
+
+        jLabel8.setText("Precio de venta: ");
+
+        jSpinner3.setModel(new javax.swing.SpinnerNumberModel(0.0d, 0.0d, null, 1.0d));
+
+        jTextField2.setText("jTextField2");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -121,22 +123,24 @@ public class AltaPrendas extends javax.swing.JDialog {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jLabel5)
+                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(193, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel4)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jTextField2)
-                            .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                .addComponent(jLabel5)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 452, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel4)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabel2)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jLabel2)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addComponent(jLabel6)
@@ -145,8 +149,17 @@ public class AltaPrendas extends javax.swing.JDialog {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(jLabel7)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jSpinner2, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
-                .addContainerGap(89, Short.MAX_VALUE))
+                                        .addComponent(jSpinner2, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addComponent(jLabel8)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jSpinner3, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(176, 176, 176)))))
+                        .addGap(0, 18, Short.MAX_VALUE))))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(219, 219, 219)
+                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -156,10 +169,10 @@ public class AltaPrendas extends javax.swing.JDialog {
                     .addComponent(jLabel3)
                     .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jLabel5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(23, 23, 23)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel5)
+                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2)
@@ -169,7 +182,11 @@ public class AltaPrendas extends javax.swing.JDialog {
                     .addComponent(jLabel6)
                     .addComponent(jLabel7)
                     .addComponent(jSpinner2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 171, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel8)
+                    .addComponent(jSpinner3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 174, Short.MAX_VALUE)
                 .addComponent(jButton2)
                 .addGap(18, 18, 18)
                 .addComponent(jButton1)
@@ -187,30 +204,39 @@ public class AltaPrendas extends javax.swing.JDialog {
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
-
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // Cogemos el dato del nombre (que está en jTextField1
         String codigo = jTextField1.getText();
         String descripcion = jTextField2.getText();
-//        String color = jComboBox1.getPrototypeDisplayValue();
-//        String color = jComboBox2.getPrototypeDisplayValue();
+        String color = (String) jComboBox1.getSelectedItem();
+        String talla = (String) jComboBox2.getSelectedItem();
+        double precio = (double) jSpinner1.getValue();
+        int stock = (int) jSpinner2.getValue();
+        double precioventa = (double) jSpinner3.getValue();
         if (codigo.equals("")) {
             // Si han dejado el nombre en blanco
             // mostramos msg de error con el msg correspondiente
             JOptionPane.showMessageDialog(this, "Indica el codigo", "Campo codigo vacío", JOptionPane.ERROR_MESSAGE);
-        } else if (descripcion.equals("")) {
-            // saludamos al usuario
+        } else if (descripcion.equals("")) {      
+            JOptionPane.showMessageDialog(this, "Indica la descripcion", "Campo descripción vacío", JOptionPane.ERROR_MESSAGE);
+        } else if (color.equals("")) {
+            
             JOptionPane.showMessageDialog(this, "Indica la descripcion", "Campo descripcion vacío", JOptionPane.ERROR_MESSAGE);
-//        } else if (color.equals("")) {
-//            // saludamos al usuario
-//            JOptionPane.showMessageDialog(this, "Indica la descripcion", "Campo descripcion vacío", JOptionPane.ERROR_MESSAGE);
-//        } else if (color.equals("")) {
-//            // saludamos al usuario
-//            JOptionPane.showMessageDialog(this, "Indica la descripcion", "Campo descripcion vacío", JOptionPane.ERROR_MESSAGE);
-        } else {
+        } else if (talla.equals("")) {
+            
+            JOptionPane.showMessageDialog(this, "Indica la descripcion", "Campo descripcion vacío", JOptionPane.ERROR_MESSAGE);
+        } else if (precio == 0) {
+            
+            JOptionPane.showMessageDialog(this, "Indica la descripcion", "Campo descripcion vacío", JOptionPane.ERROR_MESSAGE);
+        } else if (stock == 0) {
+            
+            JOptionPane.showMessageDialog(this, "Indica la descripcion", "Campo descripcion vacío", JOptionPane.ERROR_MESSAGE);
+        } else if (precioventa == 0) {
+            
+            JOptionPane.showMessageDialog(this, "Indica la descripcion", "Campo descripcion vacío", JOptionPane.ERROR_MESSAGE);
+        }  else {
+            Prenda prenda = new Prenda(codigo,descripcion,color,talla,precio,stock,precioventa);
+            ropa.add(prenda);
             JOptionPane.showMessageDialog(this, "Prenda dada de alta");
         }
     }//GEN-LAST:event_jButton2ActionPerformed
@@ -278,8 +304,10 @@ public class AltaPrendas extends javax.swing.JDialog {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JSpinner jSpinner1;
     private javax.swing.JSpinner jSpinner2;
+    private javax.swing.JSpinner jSpinner3;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     // End of variables declaration//GEN-END:variables

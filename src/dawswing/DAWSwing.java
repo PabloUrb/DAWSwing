@@ -5,6 +5,8 @@
  */
 package dawswing;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Pablo
@@ -22,5 +24,6 @@ public class DAWSwing {
         //lo havemos visible
         principal.setVisible(true);
     }
+    static ArrayList<Prenda> ropa = new ArrayList<>();
     
 }
