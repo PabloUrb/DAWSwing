@@ -17,9 +17,9 @@ public class EntradaProducto extends javax.swing.JDialog {
     public EntradaProducto(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
-        jComboBox1<String> codigo new = ComboBox<String>();
-        DefaultComboBoxModel modelito = new DefaultComboBoxModel();
-        codigo.setModel(modelito);
+//        jComboBox1<String> codigo new = ComboBox<String>();
+//        DefaultComboBoxModel modelito = new DefaultComboBoxModel();
+//        codigo.setModel(modelito);
     }
 
     /**
