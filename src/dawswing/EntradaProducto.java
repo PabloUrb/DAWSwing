@@ -8,19 +8,30 @@ package dawswing;
 
 
 import static dawswing.DAWSwing.ropa;
+import javax.swing.JOptionPane;
 
 
 public class EntradaProducto extends javax.swing.JDialog {
 
+        public static Prenda recogerUnidad(String nombre) {
+        for (Prenda e : ropa) {
+            if (e.getCodigo().equalsIgnoreCase(nombre)) {
+                return e;
+            }
+        }
+        return null;
+    }
 
     public void codigos() {     
         ropa.forEach((e) -> {
             jComboBox1.addItem(e.getCodigo());
+            jSpinner1.setValue(e.getStock());
         });
     }
     public EntradaProducto(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        codigos();
 //        jComboBox1<String> codigo new = ComboBox<String>();
 //        DefaultComboBoxModel modelito = new DefaultComboBoxModel();
 //        codigo.setModel(modelito);
@@ -71,6 +82,11 @@ public class EntradaProducto extends javax.swing.JDialog {
         jLabel4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         jButton2.setText("Cambiar stock");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -124,6 +140,15 @@ public class EntradaProducto extends javax.swing.JDialog {
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
 
     }//GEN-LAST:event_jComboBox1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        int stock = (int) jSpinner1.getValue();
+        String codigo = (String) jComboBox1.getSelectedItem();
+        
+        Prenda a = recogerUnidad(codigo);
+        JOptionPane.showMessageDialog(this, "Stock cambiado");
+        a.setStock(stock);
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
