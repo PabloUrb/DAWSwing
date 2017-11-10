@@ -25,5 +25,7 @@ public class DAWSwing {
         principal.setVisible(true);
     }
     static ArrayList<Prenda> ropa = new ArrayList<>();
+    static String color;
+    static String talla;
     
 }
