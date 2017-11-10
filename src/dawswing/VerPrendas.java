@@ -14,16 +14,9 @@ import javax.swing.JTextField;
  *
  * @author DAM
  */
-public class VerPrendas extends javax.swing.JFrame {
+public class VerPrendas extends javax.swing.JFrame {                          //he creado un metodo que recoja lo que pone el usuario de color y talla 
+                                                                              // y te lo guarde en las variables declaradas en DAWSwing
 
-    public static Prenda recogerUnidad(String nombre) {
-        for (Prenda e : ropa) {
-            if (e.getColor().equalsIgnoreCase(nombre)) {
-                return e;
-            }
-        }
-        return null;
-    }
     int numero = 1;
 
     public void Enviar() {

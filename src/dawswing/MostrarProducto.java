@@ -24,18 +24,18 @@ public class MostrarProducto extends javax.swing.JFrame {
     public MostrarProducto(java.awt.Frame parent, boolean modal) {
         initComponents();
 
-        if (color.equals("--Mostrar Todos--") && talla.equals("--Mostrar Todos--")) {
-            mostrartodos();
-        } else {
+        if (color.equals("--Mostrar Todos--") && talla.equals("--Mostrar Todos--")) {          //aqui recogemos las variables que hemos cogido en VerPrendas
+            mostrartodos();                                                                    // y dependiendo de que ha puesto mostramos todas o solo algunas
+        } else {                                                                               // de las prendas que tenemos en nuestro arraylist
             mostaralgunos(color, talla);
         }
     }
 
-    public Prenda mostaralgunos(String color, String talla) {
-        Prenda p = ropa.get(i);
+    public Prenda mostaralgunos(String color, String talla) {                                  //este metodo es igual que en el que mostramos todo solo que con el for
+        Prenda p = ropa.get(i); 
         for (int j = 0; j <ropa.size(); j++) {
-            if (p.getColor().equals(color) || p.getTalla().equals(talla)) {
-                jTextField3.setText(p.getCodigo());
+            if (p.getColor().equals(color) || p.getTalla().equals(talla)) {                    //este for lo que hace es que si es igual al que tenemos guardado
+                jTextField3.setText(p.getCodigo());                                 //en la variable general, nos imprimirá los datos en caso de que no sea asi, no lo hará
                 jTextField4.setText(p.getDescripcion());
                 R2.setText(p.getTalla());
                 R1.setText(p.getColor());
@@ -46,14 +46,14 @@ public class MostrarProducto extends javax.swing.JFrame {
 
             }
         }
-        if (ropa.size() == 1) {
+        if (ropa.size() == 1) {                                                        //esto es sobre los botones de siguiente o anterior
             jButton3.setEnabled(false);
-            jButton4.setEnabled(false);
-        } else if (i == 0) {
-            jButton3.setEnabled(false);              //boton3 anterior   
+            jButton4.setEnabled(false);                                         //si la longitud del array es 1 no se puede ir ni adelante ni atras
+        } else if (i == 0 && ropa.size()>1) {
+            jButton3.setEnabled(false);              //boton3 anterior          //si i como contador vale 0 y la longitud de ropa es mayor a 1 significa hay un siguiente
             jButton4.setEnabled(true);               //boton4 siguiente
-        } else if (i == ropa.size() - 1) {
-            jButton3.setEnabled(true);
+        } else if (i == ropa.size() - 1) {                                      // en caso de que i valga como la ultima pos del array siguifica que a llegado al final 
+            jButton3.setEnabled(true);                                          // y por tanto el boton de siguiente no puede funcionar
             jButton4.setEnabled(false);
         } else {
             
@@ -65,8 +65,8 @@ public class MostrarProducto extends javax.swing.JFrame {
 
     }
 
-    public Prenda mostartodos() {
-        if (ropa.size() == 1) {
+    public Prenda mostartodos() {        //aqui hacemos lo mismo que con el anterior solo que no recorremos el array y no ponemos la condicion de que los colores
+        if (ropa.size() == 1) {                 // o las tallas tienen que coincidir y por tanto los muestra todos
             jButton3.setEnabled(false);
             jButton4.setEnabled(false);
         } else if (i == 0) {
@@ -268,13 +268,13 @@ public class MostrarProducto extends javax.swing.JFrame {
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
 //        recogerColor(color);
-        i++;
+        i++;                                    //aqui hacemos que el contador suba uno
         mostaralgunos(color, talla);
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        i--;
-        mostaralgunos(color, talla);
+        i--;                                    //aqui hacemos que el contador baje uno
+        mostaralgunos(color, talla); 
     }//GEN-LAST:event_jButton3ActionPerformed
 
     /**

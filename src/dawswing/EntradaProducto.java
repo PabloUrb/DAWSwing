@@ -13,7 +13,7 @@ import javax.swing.JOptionPane;
 
 public class EntradaProducto extends javax.swing.JDialog {
 
-        public static Prenda recogerUnidad(String nombre) {
+        public static Prenda recogerUnidad(String nombre) {          //con el nombre que cogemos con el boton(combobox), recogemos el codigo
         for (Prenda e : ropa) {
             if (e.getCodigo().equalsIgnoreCase(nombre)) {
                 return e;
@@ -22,7 +22,7 @@ public class EntradaProducto extends javax.swing.JDialog {
         return null;
     }
 
-    public void codigos() {     
+    public void codigos() {   //recorremos las prendas, las insertamos en el combobox y añadimos los valores al spiner      
         ropa.forEach((e) -> {
             jComboBox1.addItem(e.getCodigo());
             jSpinner1.setValue(e.getStock());
@@ -134,7 +134,7 @@ public class EntradaProducto extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        dispose();
+        dispose(); //cierra ventana
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
@@ -145,9 +145,9 @@ public class EntradaProducto extends javax.swing.JDialog {
         int stock = (int) jSpinner1.getValue();
         String codigo = (String) jComboBox1.getSelectedItem();
         
-        Prenda a = recogerUnidad(codigo);
-        JOptionPane.showMessageDialog(this, "Stock cambiado");
-        a.setStock(stock);
+        Prenda a = recogerUnidad(codigo);                         //recogemos el valor que a cambiado en el spinner 
+        JOptionPane.showMessageDialog(this, "Stock cambiado");           //cuando ya tenemos el codigo, con el metodo de arriba, 
+        a.setStock(stock);                                               //cambiamos el stoc por el que hemos recogido en el spinner
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**

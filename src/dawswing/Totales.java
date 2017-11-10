@@ -13,15 +13,15 @@ import static dawswing.DAWSwing.ropa;
  */
 public class Totales extends javax.swing.JDialog {
 int stocktotal=0;
-int preciototal =0;
+int preciototal =0;              //inicializo las variables
 String stocktotal1="";
 String preciototal1 = "";
-    public void total() {     
+    public void total() {                               //recorro el array ropa sumando tanto el precio como el stock y los guardo en dos variables
         ropa.forEach((e) -> {
             stocktotal+=e.getStock();
             preciototal+=e.getPrecio();
         });
-        stocktotal1 = String.valueOf(stocktotal);
+        stocktotal1 = String.valueOf(stocktotal);               //los paso a string y los pongo en los textfiel correspondiente
         preciototal1 = String.valueOf(preciototal);
         jTextField1.setText(stocktotal1);
         jTextField2.setText(preciototal1);

@@ -11,8 +11,8 @@ import javax.swing.JOptionPane;
  *
  * @author Pablo
  */
-public class Principal extends javax.swing.JFrame {
-
+public class Principal extends javax.swing.JFrame {                      //la principal unicamente se encarga de dirigirnos hacia la opcion 
+                                                                         // que quiera elegir el usuario
     /**
      * Creates new form Principal
      */
@@ -120,30 +120,30 @@ public class Principal extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         AltaPrendas ventana= new AltaPrendas(this, true);
-        ventana.setLocationRelativeTo(null);
+        ventana.setLocationRelativeTo(null);                                 //nos dirige a altaprendas
         ventana.setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         VerPrendas ventana= new VerPrendas(this, true);
-        ventana.setLocationRelativeTo(null);
+        ventana.setLocationRelativeTo(null);                                 //nos dirige a VerPrendas
         ventana.setVisible(true);
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        EntradaProducto ventana= new EntradaProducto(this, true);
+        EntradaProducto ventana= new EntradaProducto(this, true);               //nos dirige a EntradaProducto
         ventana.setLocationRelativeTo(null);
         ventana.setVisible(true);
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        SalidaProducto ventana= new SalidaProducto(this, true);
+        SalidaProducto ventana= new SalidaProducto(this, true);                 //nos dirige a SalidaProducto
         ventana.setLocationRelativeTo(null);
         ventana.setVisible(true);
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        Totales ventana= new Totales(this, true);
+        Totales ventana= new Totales(this, true);                               //nos dirige a Totales
         ventana.setLocationRelativeTo(null);
         ventana.setVisible(true);
     }//GEN-LAST:event_jButton6ActionPerformed

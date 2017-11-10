@@ -11,9 +11,9 @@ import java.util.Objects;
  *
  * @author DAM
  */
-public class Prenda {
-
-    static String getCodigo;
+public class Prenda {                                              //aqui basicamente lo que hacemos es dar forma y caracteristicas
+                                                                   //al objeto ademas de insertar los constructores, getters, setters,...
+    static String getCodigo;                                       
     private String codigo;
     private String descripcion;
     private String color;

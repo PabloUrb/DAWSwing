@@ -207,12 +207,12 @@ public class AltaPrendas extends javax.swing.JDialog {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // Cogemos el datos
         String codigo = jTextField1.getText();
-        String descripcion = jTextField2.getText();
+        String descripcion = jTextField2.getText();                                     //recojo todas las variables que el usuario haya puesto
         String color = (String) jComboBox1.getSelectedItem();
         String talla = (String) jComboBox2.getSelectedItem();
         double precio = (double) jSpinner1.getValue();
         int stock = (int) jSpinner2.getValue();
-        double precioventa = (double) jSpinner3.getValue();
+        double precioventa = (double) jSpinner3.getValue();                             // y verifico que no pueda dejar ningun campo vacio
         if (codigo.equals("")) {
             // Si han dejado el nombre en blanco
             // mostramos msg de error con el msg correspondiente
