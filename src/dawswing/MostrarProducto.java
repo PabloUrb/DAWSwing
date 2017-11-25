@@ -31,7 +31,7 @@ public class MostrarProducto extends javax.swing.JFrame {
         }
     }
 
-    public Prenda mostaralgunos(String color, String talla) {                                  //este metodo es igual que en el que mostramos todo solo que con el for
+    public Prenda mostaralgunos(String color, String talla) {                                 //este metodo es igual que en el que mostramos todo solo que con el for
         Prenda p = ropa.get(i); 
         for (int j = 0; j <ropa.size(); j++) {
             if (p.getColor().equals(color) || p.getTalla().equals(talla)) {                    //este for lo que hace es que si es igual al que tenemos guardado
@@ -65,7 +65,7 @@ public class MostrarProducto extends javax.swing.JFrame {
 
     }
 
-    public Prenda mostartodos() {        //aqui hacemos lo mismo que con el anterior solo que no recorremos el array y no ponemos la condicion de que los colores
+    public Prenda mostrartodos() {        //aqui hacemos lo mismo que con el anterior solo que no recorremos el array y no ponemos la condicion de que los colores
         if (ropa.size() == 1) {                 // o las tallas tienen que coincidir y por tanto los muestra todos
             jButton3.setEnabled(false);
             jButton4.setEnabled(false);
@@ -342,7 +342,5 @@ public class MostrarProducto extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField9;
     // End of variables declaration//GEN-END:variables
 
-    private void mostrartodos() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    
 }
